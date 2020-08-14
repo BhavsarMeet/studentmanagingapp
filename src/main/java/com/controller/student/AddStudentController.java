@@ -52,26 +52,27 @@ public class AddStudentController extends HttpServlet {
 		else 
 		{
 			sb.setsEmail(sEmail);
+			request.setAttribute("semail",sb.getsEmail());
 		}
 		if(!(sAge>18))
 		{
 			flag=false;
 			request.setAttribute("age","*age must be greater than 18");
-			
 		}
 		else 
 		{
 			sb.setsAge(sAge);
+			request.setAttribute("sage",sb.getsAge());
 		}
 		if(!new Validation().checkMobile(sMob))
 		{	
 			flag=false;
 			request.setAttribute("mobile","*Valid mobile number Required");
-		
 		}
 		else 
 		{
 			sb.setsMob("+91"+sMob);
+			request.setAttribute("smob",sb.getsMob());
 		}
 		if(!new Validation().checkName(sName))
 		{
@@ -81,6 +82,7 @@ public class AddStudentController extends HttpServlet {
 		else
 		{
 			sb.setsName(sName);	
+			request.setAttribute("sname",sb.getsName());
 		}
 		if(!(fId>0))
 		{
@@ -88,7 +90,9 @@ public class AddStudentController extends HttpServlet {
 			request.setAttribute("faculty","*please select faculty name");
 		}
 		else 
+		{	
 			sb.setfId(fId);
+		}
 		//validation to set student bean--->end
 		
 		//insertion in database
@@ -103,7 +107,6 @@ public class AddStudentController extends HttpServlet {
 		}
 		else
 		{
-			request.setAttribute("error", "enter data again");
 			request.getRequestDispatcher("./student/StudentAdd.jsp").forward(request, response);
 		}	
 	}

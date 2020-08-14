@@ -9,7 +9,7 @@ public class Validation
 	{
 		boolean email=false;
 		
-		Pattern p=Pattern.compile("[a-z0-9]{1,15}[@]{1}[a-z]{1,10}[.]{1}[c]{1}[o]{1}[m]{1}");
+		Pattern p=Pattern.compile("[a-z0-9]{1,25}[@]{1}[a-z]{1,10}[.]{1}[c]{1}[o]{1}[m]{1}");
 		Matcher m=p.matcher(sEmail);
 		email=m.matches();
 		
@@ -18,7 +18,7 @@ public class Validation
 	public boolean checkMobile(String sMobile)
 	{
 		boolean mobile=false;
-		Pattern p=Pattern.compile("[789]{1}[0-9]{9}");;
+		Pattern p=Pattern.compile("[6789]{1}[0-9]{9}");;
 		Matcher m=p.matcher(sMobile);
 		mobile=m.matches();
 		
