@@ -99,6 +99,7 @@
   	<servlet-class>com.controller.remark.RemarkDeleteController</servlet-class>
   </servlet>
   
+  
   <servlet-mapping>
   	<servlet-name>FacultyLoginController</servlet-name>
   	<url-pattern>/FacultyLoginController</url-pattern>

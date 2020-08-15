@@ -1,6 +1,8 @@
 package com.controller.faculty;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,11 +28,17 @@ public class FacultyLoginController extends HttpServlet {
 	
 		FacultyBean fb=new FacultyDao().facultyLogin(fEmail, fPassword);
 		
-		if(fb!=null) {
+		  ArrayList<FacultyBean> al=new FacultyDao().facultyList();
+		if(fb!=null ) {
 			HttpSession session=request.getSession();
 			session.setAttribute("fb", fb);
-			response.sendRedirect("./shared/DashBoard.jsp");
-		}
+			
+			if(al!=null)
+			{	
+				session.setAttribute("facultylist", al);
+				response.sendRedirect("./shared/DashBoard.jsp");
+			}
+		}	
 		else 
 		{
 				request.setAttribute("error", "*Enter valid username or password");

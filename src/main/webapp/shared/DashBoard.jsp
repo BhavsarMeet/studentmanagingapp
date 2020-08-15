@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@page import="com.bean.faculty.FacultyBean"%>
@@ -364,10 +365,32 @@
           </div>
 
           <!-- Content Row -->
+  <div class="container">
 
+  <div class="row">
+    <div class="col p-3 mb-2 bg-info text-white">
+      Faculty Name
+    </div>
+    <div class="col p-3 mb-2 bg-info text-white">
+      Faculty Subject
+    </div>
+  </div>
+ <% ArrayList<FacultyBean> al=(ArrayList<FacultyBean>)session.getAttribute("facultylist"); 
+	for(int i=0;i<al.size();i++)
+	{	FacultyBean fb1=al.get(i);  
+%>
+<div class="row">
+  <div class="col p-3 mb-2 bg-info text-white">
+      <%=fb1.getfName() %>
+    </div>
+    <div class="col p-3 mb-2 bg-info text-white">
+      <%=fb1.getfSub()%>
+    </div>
+  </div>
+ <%} %> 
+</div>  
 
-
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel"  >
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -377,22 +400,22 @@
     <div class="carousel-item active">
       <img src="1.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>College</h5>
-        <p>Lavish Green Campus for Students</p>
+        <h5>Lavish Green Campus</h5>
+        <p>Get the lavish green campus which sets the studying evironment</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="2.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Convocation</h5>
-        <p>Get valued degree</p>
+        <p>Degrees,matters a lot!!!</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Mess</h5>
-        <p>Enjoy in Mess with friends in free time</p>
+        <p>Chill out during free time in mess</p>
       </div>
     </div>
   </div>
@@ -405,9 +428,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-</div>
-     
-      <!-- Footer -->
+
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
@@ -465,7 +486,7 @@
   <script src="js/demo/chart-pie-demo.js"></script>
 <%}
 else
-{
+{	
 	
 	response.sendRedirect("../index.jsp");
 	}%>

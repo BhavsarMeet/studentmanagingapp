@@ -53,7 +53,7 @@ public class FacultyDao
 		
 		if(conn!=null)
 		{
-			String selectSQL="select fid,fname from faculty";
+			String selectSQL="select fid,fname,fsub from faculty";
 			try {
 				pstmt=conn.prepareStatement(selectSQL);
 				rs=pstmt.executeQuery();
@@ -63,6 +63,7 @@ public class FacultyDao
 					FacultyBean fb=new FacultyBean();
 					fb.setfId(rs.getInt("fid"));
 					fb.setfName(rs.getString("fname"));
+					fb.setfSub(rs.getString("fsub"));
 					alf.add(fb);
 				}
 				System.out.println(alf.get(0));
