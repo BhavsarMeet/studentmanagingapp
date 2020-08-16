@@ -99,7 +99,6 @@ public class AddStudentController extends HttpServlet {
 		if(flag==true)
 		{	
 			boolean setStudent=new StudentDao().addStudent(sb);
-			System.out.println("set data");
 			if(setStudent)
 			{
 				response.sendRedirect("StudentListController");

@@ -365,30 +365,27 @@
           </div>
 
           <!-- Content Row -->
-  <div class="container">
-
-  <div class="row">
-    <div class="col p-3 mb-2 bg-info text-white">
-      Faculty Name
-    </div>
-    <div class="col p-3 mb-2 bg-info text-white">
-      Faculty Subject
-    </div>
-  </div>
- <% ArrayList<FacultyBean> al=(ArrayList<FacultyBean>)session.getAttribute("facultylist"); 
+          <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Faculty Name</th>
+      <th scope="col">Faculty Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% ArrayList<FacultyBean> al=(ArrayList<FacultyBean>)session.getAttribute("facultylist"); 
 	for(int i=0;i<al.size();i++)
 	{	FacultyBean fb1=al.get(i);  
 %>
-<div class="row">
-  <div class="col p-3 mb-2 bg-info text-white">
-      <%=fb1.getfName() %>
-    </div>
-    <div class="col p-3 mb-2 bg-info text-white">
-      <%=fb1.getfSub()%>
-    </div>
-  </div>
- <%} %> 
-</div>  
+    <tr>
+      <th scope="row"><%=i+1%></th>
+      <td><%=fb1.getfName() %></td>
+      <td><%=fb1.getfSub()%></td>
+    </tr>
+   <%} %> 
+  </tbody>
+</table>
 
 <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
   <ol class="carousel-indicators">

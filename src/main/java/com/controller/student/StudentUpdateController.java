@@ -45,14 +45,7 @@ public class StudentUpdateController extends HttpServlet {
 							
 				StudentBean sb=new StudentBean();
 				//validation to set student bean--->start
-				if(sId==0)
-				{
-					flag=false;
-				}
-				else
-				{
-					sb.setsId(sId);
-				}
+				sb.setsId(sId);
 				if(!new Validation().checkEmail(sEmail))
 				{
 					flag=false;
@@ -76,11 +69,10 @@ public class StudentUpdateController extends HttpServlet {
 				{	
 					flag=false;
 					request.setAttribute("mobile","*Valid mobile number Required");
-				
 				}
 				else 
 				{
-					sb.setsMob("+91"+sMob);
+					sb.setsMob(sMob);
 				}
 				if(!new Validation().checkName(sName))
 				{
@@ -103,8 +95,9 @@ public class StudentUpdateController extends HttpServlet {
 				//insertion in database
 				if(flag==true)
 				{	
+					sb.setsMob("+91"+sb.getsMob());
 					boolean updateStudent=new StudentDao().updateStudent(sb);
-			
+					
 					if(updateStudent)
 					{
 						response.sendRedirect("StudentListController");
@@ -114,6 +107,7 @@ public class StudentUpdateController extends HttpServlet {
 				{
 					System.out.println("false");
 					request.setAttribute("error", "enter data again!!!");
+					request.setAttribute("studentbean", sb);
 					request.getRequestDispatcher("./student/StudentEdit.jsp").forward(request, response);
 					
 				}	
