@@ -26,7 +26,7 @@ public class ReportController extends HttpServlet {
 		if(sid.trim().length()>0)
 			sId=Integer.parseInt(sid);
 		System.out.println(new RemarkDao().generateReport(sId,sName));
-		response.sendRedirect("./shared/DashBoard.jsp");
+		response.sendRedirect("./report/"+sName+".pdf");
 	}
 
 }

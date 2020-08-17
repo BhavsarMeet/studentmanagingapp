@@ -128,7 +128,7 @@ public class RemarkDao
 	}
 	public String generateReport(int sId,String name)
 	{
-		String reportPath="D:\\Meet study\\Advance Java\\Report";
+		String reportPath="D:\\Meet study\\Java\\eclipse-workspace\\Student_Management\\src\\main\\webapp\\report";
 		
 		//compile jrxml file
 		try {
