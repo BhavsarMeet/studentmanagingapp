@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class DBConnectionPostgre 
 {
 	static String DriverClassName="org.postgresql.Driver";
-	static String username="postgres";
-	static String password="meet";
-	static String ConnectionUrl="jdbc:postgresql://localhost:5432/advance_java";	
+	static String username="wjoyiffcwkvpwr";
+	static String password="492e76e248e0473c148e6f3f676856efef4f3cb9e7e253a7d0d56b93f2ac7efb";
+	static String ConnectionUrl="jdbc:postgresql://ec2-54-166-107-5.compute-1.amazonaws.com:5432/d5skevnvcee748?sslmode=require";	
 
 	public static Connection getdbconnection()
 	{
