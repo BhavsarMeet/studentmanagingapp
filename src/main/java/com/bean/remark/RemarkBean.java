@@ -1,5 +1,7 @@
 package com.bean.remark;
 
+import java.sql.Blob;
+
 public class RemarkBean 
 {
 	private int rId;
@@ -11,6 +13,15 @@ public class RemarkBean
 	private int rExam;
 	private String sName;
 	private int sId;
+	private byte[] rPdf;
+	
+	
+	public byte[] getrPdf() {
+		return rPdf;
+	}
+	public void setrPdf(byte[] rPdf) {
+		this.rPdf = rPdf;
+	}
 	public int getrId() {
 		return rId;
 	}

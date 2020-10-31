@@ -44,23 +44,24 @@
               <form class="user" action="<%=request.getContextPath() %>/AddStudentController">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" name="txtStudentName" value="${sname}" id="exampleFirstName" placeholder="Enter Name....">
-              	${name}
-                  </div>
+                    <input type="text" class="form-control form-control-user" name="txtStudentName" value="${sb.sName}" id="exampleFirstName" placeholder="Enter Name....">
+              	   </div>
+              	  ${name } 
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" name="txtStudentAge" value="${sage}"id="exampleLastName" placeholder="Enter Your Age....">
-                ${age}
+                    <input type="text" class="form-control form-control-user" name="txtStudentAge" value="${sb.sAge}"id="exampleLastName" placeholder="Enter Your Age....">
                   </div>
                 </div>
+                 ${age }
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" name="txtStudentEmail" value="${semail}"id="exampleInputEmail" placeholder="Enter Email">
-                ${email}
+                  <input type="text" class="form-control form-control-user" name="txtStudentEmail" value="${sb.sEmail}"id="exampleInputEmail" placeholder="Enter Email">
                 </div>
+                ${email }
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" name="txtStudentMob" value="${smob}"id="exampleInputPassword" placeholder="Enter Mobile">
-                ${mobile}
+                    <input type="text" class="form-control form-control-user" name="txtStudentMob" value="${sb.sMob}"id="exampleInputPassword" placeholder="Enter Mobile">
+                	</div>
                   </div>
+                  ${mobile}
                 <br>
                 <br>
                 <div class="form-group row">

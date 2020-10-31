@@ -19,13 +19,13 @@ public class ReportController extends HttpServlet {
      */
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sid=request.getParameter("hiddenSid");
+		String rid=request.getParameter("hiddenRid");
 		String sName=request.getParameter("hiddenName");
-		
-		int sId=0;
-		if(sid.trim().length()>0)
-			sId=Integer.parseInt(sid);
-		System.out.println(new RemarkDao().generateReport(sId,sName));
+	
+		int rId=0;
+		if(rid.trim().length()>0)
+			rId=Integer.parseInt(rid);
+		System.out.println(new RemarkDao().generateReport(rId,sName));
 		response.sendRedirect("./report/"+sName+".pdf");
 	}
 

@@ -22,11 +22,11 @@ public class ReportListController extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		String sid=request.getParameter("sid");
-		int sId=0;
-		if(sid.trim().length()>0 && sid!=null)
-			sId=Integer.parseInt(sid);
-		ArrayList<RemarkBean> al=new RemarkDao().listById(sId);
+		String rid=request.getParameter("rid");
+		int rId=0;
+		if(rid.trim().length()>0)
+			rId=Integer.parseInt(rid);
+		ArrayList<RemarkBean> al=new RemarkDao().listById(rId);
 		if(al!=null)
 		{
 			request.setAttribute("listbyid", al);

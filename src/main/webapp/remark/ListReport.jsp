@@ -26,7 +26,7 @@
 </head>
 
 <body class="bg-gradient-primary">
-<%int sId=Integer.parseInt(request.getParameter("sid")); %>
+<%-- <%int rId=Integer.parseInt(request.getParameter("rid")); %> --%>
 ${error }
   <div class="container">
 
@@ -44,7 +44,7 @@ ${error }
 			<% ArrayList<RemarkBean> al=(ArrayList<RemarkBean>)request.getAttribute("listbyid"); 
 				RemarkBean rb= al.get(0); %>
       <form class="user" action="<%=request.getContextPath() %>/ReportController"> 
-              		<input type="hidden" name="hiddenSid" value="<%=rb.getsId()%>">
+              		<input type="hidden" name="hiddenRid" value="<%=rb.getrId()%>">
 					<input type="hidden" name="hiddenName" value="<%=rb.getsName() %>" %>
 <div class="container">
 	

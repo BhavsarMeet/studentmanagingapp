@@ -52,7 +52,6 @@ public class AddStudentController extends HttpServlet {
 		else 
 		{
 			sb.setsEmail(sEmail);
-			request.setAttribute("semail",sb.getsEmail());
 		}
 		if(!(sAge>18))
 		{
@@ -62,7 +61,6 @@ public class AddStudentController extends HttpServlet {
 		else 
 		{
 			sb.setsAge(sAge);
-			request.setAttribute("sage",sb.getsAge());
 		}
 		if(!new Validation().checkMobile(sMob))
 		{	
@@ -71,8 +69,7 @@ public class AddStudentController extends HttpServlet {
 		}
 		else 
 		{
-			sb.setsMob("+91"+sMob);
-			request.setAttribute("smob",sb.getsMob());
+			sb.setsMob(sMob);
 		}
 		if(!new Validation().checkName(sName))
 		{
@@ -82,7 +79,6 @@ public class AddStudentController extends HttpServlet {
 		else
 		{
 			sb.setsName(sName);	
-			request.setAttribute("sname",sb.getsName());
 		}
 		if(!(fId>0))
 		{
@@ -98,6 +94,7 @@ public class AddStudentController extends HttpServlet {
 		//insertion in database
 		if(flag==true)
 		{	
+			sb.setsMob("+91"+sMob);
 			boolean setStudent=new StudentDao().addStudent(sb);
 			if(setStudent)
 			{
@@ -106,6 +103,7 @@ public class AddStudentController extends HttpServlet {
 		}
 		else
 		{
+			request.setAttribute("sb", sb);
 			request.getRequestDispatcher("./student/StudentAdd.jsp").forward(request, response);
 		}	
 	}

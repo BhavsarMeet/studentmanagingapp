@@ -346,7 +346,7 @@
 		%>
 		
 			<td><%=rb.getsId() %></td>
-			<td><a href="./ReportListController?sid=<%=rb.getsId()%>"><%=rb.getsName() %></a></td>
+			<td><a href="./ReportListController?rid=<%=rb.getrId()%>"><%=rb.getsName() %></a></td>
 			<td><%=rb.getrDescipline() %></td>
 			<td><%=rb.getrRegular() %></td>
 			<td><%=rb.getrResearch() %></td>
